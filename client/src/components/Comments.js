@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthContext";
 export default function Comments({ postId }) {
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");
-  const { token, user } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchComments = async () => {
