@@ -14,7 +14,7 @@ export default function CreatePost() {
 
   const submit = async (e) => {
     e.preventDefault();
-    await axios.post("${process.env.REACT_APP_API_URL}/api/posts", { title, content}, {
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/posts`, { title, content}, {
       headers: { Authorization: `Bearer ${token}` },
     });
     nav("/");
