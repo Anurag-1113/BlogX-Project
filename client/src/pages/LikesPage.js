@@ -9,7 +9,7 @@ export default function LikesPage() {
   useEffect(() => {
     const fetchMyPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/posts");
+        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/posts");
         const filtered = res.data.filter(
           (post) => post.author === user.username
         );
