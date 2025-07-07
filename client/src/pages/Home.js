@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("${process.env.REACT_APP_API_URL}/api/posts");
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts`);
         // Filter out any existing sample posts or JavaScript snippets
         const filteredPosts = res.data.filter(post => 
           !post.title.toLowerCase().includes('javascript') &&
