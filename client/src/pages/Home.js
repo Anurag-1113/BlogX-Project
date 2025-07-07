@@ -40,7 +40,7 @@ export default function Home() {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/posts/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/posts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +52,7 @@ export default function Home() {
   };
   const handleLike = async (id) => {
   try {
-    const res = await axios.post(`http://localhost:5000/api/posts/${id}/like`, {}, {
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/posts/${id}/like`, {}, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setPosts((prev) =>
