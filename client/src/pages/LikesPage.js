@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../AuthContext";
 
 export default function LikesPage() {
-  const { token, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [myPosts, setMyPosts] = useState([]);
 
   useEffect(() => {
