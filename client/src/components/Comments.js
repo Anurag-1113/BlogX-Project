@@ -10,7 +10,7 @@ export default function Comments({ postId }) {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/comments/${postId}`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/comments/${postId}`);
         setComments(res.data);
       } catch (err) {
         console.error("Error fetching comments", err);
