@@ -15,7 +15,7 @@ export default function EditPost() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/posts`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts`);
         const post = res.data.find((p) => p._id === id);
         if (!post) return alert("Post not found");
         setTitle(post.title);
